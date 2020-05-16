@@ -1,0 +1,17 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: oak middleware tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repository
+        uses: actions/checkout@v2
+
+      - name: run tests
+        run: |
+          curl -L https://deno.land/x/install/install.sh | sh -s "v1.0.0"
+          export PATH="$HOME/.deno/bin:$PATH"
+          deno test
