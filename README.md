@@ -1,7 +1,7 @@
 # oak middleware
 
 [![ci](https://github.com/oakserver/middleware/workflows/ci/badge.svg)](https://github.com/oakserver/middleware)
-[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/oak-middleware/mod.ts)
+[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/oak_middleware/mod.ts)
 
 A collection of middleware for the
 [oak framework](https://oakserver.github.io/oak/).
