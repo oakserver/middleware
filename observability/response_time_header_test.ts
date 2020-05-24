@@ -2,7 +2,7 @@
 
 import { Context } from "../deps.ts";
 import { test } from "../test_deps.ts";
-import { responseTypeHeader } from "./response_time_header.ts";
+import { responseTimeHeader } from "./response_time_header.ts";
 import {
   assert,
   assertEquals,
@@ -23,7 +23,7 @@ test({
         }, 50);
       });
     };
-    await responseTypeHeader(mockContext, mockNext);
+    await responseTimeHeader(mockContext, mockNext);
     assertEquals(mockContext.response.headers.has("x-response-time"), true);
     const value = parseInt(
       mockContext.response.headers.get("x-response-time")!,
