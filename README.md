@@ -21,9 +21,9 @@ const app = new Application();
 app.use(oakMiddleware.responseTimeHeader);
 ```
 
-Also consider using a tagged version of the middleware so that changes to master
-won't provide unexpected results in your code. For example, to use version
-`v0.1.0` you would do the following:
+Also consider using a tagged version of the middleware so that changes to the
+main branch won't provide unexpected results in your code. For example, to use
+version `v0.1.0` you would do the following:
 
 ```ts
 import * as oakMiddleware from "https://deno.land/x/oak_middleware@v0.1.0/mod.ts";
