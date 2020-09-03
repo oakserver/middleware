@@ -19,7 +19,7 @@ import { Middleware } from "../deps.ts";
  * await app.listen(":80");
  * ```
  */
-export const responseTypeHeader: Middleware = async function (ctx, next) {
+export const responseTimeHeader: Middleware = async function (ctx, next) {
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
