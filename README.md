@@ -83,6 +83,46 @@ app.use(responseTimeHeader);
 await app.listen(":80");
 ```
 
+### Template Rendering
+
+#### `etaEngine`
+
+Middleware that allows Oak to work with the [Eta](https://eta.js.org) template engine, an embedded JavaScript template engine similar to EJS. 
+
+```ts
+// app.ts
+import { Application } from "https://deno.land/x/oak/mod.ts"
+import * as path from "https://deno.land/std/path/mod.ts"
+import { etaEngine } from "https://deno.land/x/oak-middleware/mod.ts"
+
+const __dirname = new URL(".", import.meta.url).pathname
+
+const app = new Application()
+
+app.use(
+  etaEngine({
+    views: path.join(__dirname, "views"),
+    cache: false
+  })
+)
+
+app.use((ctx) => {
+  ctx.render("template", {
+    favorite: "cake",
+    number: Math.floor(Math.random() * 100) + 1
+  })
+})
+
+await app.listen({ port: 8000 })
+```
+
+```html
+<% /* views/template.eta */ %>
+<b>My favorite food is <%= it.favorite %></b>
+```
+
+See [./eta-template/example.ts](./eta-template/example.ts) for a more complete example.
+
 ## Router Middleware
 
 This section contains middleware designed to work with the oak `Router`.

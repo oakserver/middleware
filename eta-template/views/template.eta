@@ -1,0 +1,5 @@
+<h1>This was rendered from a template!</h1>
+
+My favorite food is <%= it.favorite %>, and my favorite number is <%= it.number %>
+
+<%~ includeFile('./footer') %>
