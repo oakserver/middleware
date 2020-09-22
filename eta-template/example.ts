@@ -1,6 +1,12 @@
-import { Application } from "https://deno.land/x/oak@v6.1.0/mod.ts"
+import { Application } from "https://deno.land/x/oak@v6.2.0/mod.ts"
 import * as path from "https://deno.land/std@0.66.0/path/mod.ts"
 import { etaEngine } from "./mod.ts"
+
+declare module "https://deno.land/x/oak@v6.2.0/mod.ts" {
+  interface Context {
+    render: (fileName: string, data?: object) => void
+  }
+}
 
 const __dirname = new URL(".", import.meta.url).pathname
 
